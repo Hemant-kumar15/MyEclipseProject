@@ -1,0 +1,30 @@
+import java.util.*;
+import java.util.function.Predicate;
+
+class Notification {
+    String type;
+    String message;
+
+    Notification(String type, String message) {
+        this.type = type;
+        this.message = message;
+    }
+
+    public String toString() {
+        return "[" + type + "] " + message;
+    }
+}
+
+public class NotificationFilter {
+    public static void main(String[] args) {
+        List<Notification> list = Arrays.asList(
+            new Notification("Emergency", "Patient needs oxygen!"),
+            new Notification("Normal", "Check patient temperature."),
+            new Notification("Critical", "Heart rate abnormal!"),
+            new Notification("Normal", "Update daily report.")
+        );
+
+        Predicate<Notification> alertFilter = n -> n.type.equals("Critical") || n.type.equals("Emergency");
+        list.stream().filter(alertFilter).forEach(System.out::println);
+    }
+}
