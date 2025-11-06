@@ -1,0 +1,8 @@
+import java.util.function.Predicate;
+
+public class Q4 {
+    public static void main(String[] args) {
+        Predicate<Double> alert = t -> t > 40;
+        System.out.println(alert.test(42.5) ? "High Temp Alert!" : "Normal Temp");
+    }
+}
