@@ -1,0 +1,20 @@
+
+import java.util.*;
+public class Attendance {
+    public static void main(String[] args) {
+        Map<String,Integer> att = new HashMap<>();
+        String[] students = {"A","B","C","D","E"};
+        for (String s : students) att.put(s,0);
+        List<List<String>> days = List.of(
+                List.of("A","B"), List.of("A","C"), List.of("B","D"),
+                List.of("A","E"), List.of("A","B"), List.of("C"),
+                List.of("A","B","C"), List.of("B"), List.of("A"),
+                List.of("C","D"), List.of("A","E"), List.of("A","B"),
+                List.of("C"), List.of("A"), List.of("B","D"));
+        for (var day : days)
+            for (String name : day)
+                att.put(name, att.get(name)+1);
+        for (var e : att.entrySet())
+            if (e.getValue() < 10) System.out.println(e.getKey()+" under");
+    }
+}

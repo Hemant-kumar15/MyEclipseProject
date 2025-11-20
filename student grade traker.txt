@@ -1,0 +1,14 @@
+x
+import java.util.*;
+public class GradeTracker {
+    public static void main(String[] args) {
+        Map<String,Double> map = new TreeMap<>();
+        map.put("Ravi",88.0);
+        map.put("Amit",92.0);
+        map.put("Neha",79.0);
+        map.put("Ravi",95.0);
+        map.remove("Neha");
+        for (var e : map.entrySet())
+            System.out.println(e.getKey()+" = "+e.getValue());
+    }
+}

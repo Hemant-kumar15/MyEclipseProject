@@ -1,0 +1,18 @@
+import java.util.*;
+public class CountryCapital {
+    public static void main(String[] args) {
+        Map<String,String> map = new TreeMap<>();
+        map.put("India","Delhi");
+        map.put("USA","Washington");
+        map.put("Japan","Tokyo");
+        map.put("France","Paris");
+        map.put("UK","London");
+        map.put("China","Beijing");
+        map.put("Nepal","Kathmandu");
+        map.put("Italy","Rome");
+        String query = "Japan";
+        System.out.println(map.getOrDefault(query,"Unknown country"));
+        for (var e : map.entrySet())
+            System.out.println(e.getKey()+" - "+e.getValue());
+    }
+}

@@ -1,0 +1,19 @@
+import java.util.*;
+public class Salary {
+    public static void main(String[] args) {
+        Map<String,Double> map = new HashMap<>();
+        map.put("A",50000.0);
+        map.put("B",70000.0);
+        map.put("C",65000.0);
+        map.put("D",55000.0);
+        map.put("E",80000.0);
+        map.put("F",90000.0);
+        map.put("A", map.get("A")*1.10);
+        map.put("E", map.get("E")*1.15);
+        double avg = map.values().stream().mapToDouble(x->x).average().orElse(0);
+        double max = map.values().stream().mapToDouble(x->x).max().orElse(0);
+        System.out.println("Avg: "+avg);
+        for (var e : map.entrySet())
+            if (e.getValue() == max) System.out.println("Highest: "+e.getKey());
+    }
+}

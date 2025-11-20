@@ -1,0 +1,14 @@
+import java.util.*;
+public class Library {
+    public static void main(String[] args) {
+        Map<String,String> books = new TreeMap<>();
+        books.put("978-1","Java");
+        books.put("978-2","Python");
+        books.put("978-3","C++");
+        String isbn = "978-2";
+        System.out.println(books.getOrDefault(isbn,"Book not found"));
+        books.remove("978-3");
+        for (var e : books.entrySet())
+            System.out.println(e.getKey()+" : "+e.getValue());
+    }
+}

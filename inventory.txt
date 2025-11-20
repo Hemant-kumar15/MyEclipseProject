@@ -1,0 +1,15 @@
+x
+import java.util.*;
+public class Inventory {
+    public static void main(String[] args) {
+        Map<String,Integer> stock = new HashMap<>();
+        stock.put("Pen",20);
+        stock.put("Book",10);
+        stock.put("Bag",5);
+        stock.put("Pen", stock.get("Pen") - 5);
+        stock.put("Book", stock.get("Book") - 10);
+        stock.put("Bag", stock.get("Bag") + 20);
+        for (var e : stock.entrySet())
+            if (e.getValue() <= 0) System.out.println("Out: "+e.getKey());
+    }
+}
