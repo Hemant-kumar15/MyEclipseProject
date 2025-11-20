@@ -1,0 +1,14 @@
+class Animal {}
+class Dog extends Animal {}
+class Cat extends Animal {}
+
+class Main {
+    public static void printAnimals(List<? extends Animal> a) {
+        for (Animal x : a) System.out.println(x.getClass().getSimpleName());
+    }
+
+    public static void main(String[] args) {
+        printAnimals(List.of(new Dog(), new Dog()));
+        printAnimals(List.of(new Cat(), new Cat()));
+    }
+}

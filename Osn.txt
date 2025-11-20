@@ -1,0 +1,69 @@
+-- Print the Pattern:
+*
+**
+***
+****
+*****
+******
+
+Input:
+for ((i=1; i<=6; i++))
+do
+  for ((j=1; j<=i; j++))
+  do
+    echo -n "*"
+  done
+  echo
+done
+
+Ouput:
+$ vi tri1
+$ chmod 754 tri1
+$ ./tri1
+*
+**
+***
+****
+*****
+******
+
+-- Faculty and their subject name:
+
+Input:
+echo "Faculty Name: Shalya Saxena"
+echo "Subject: Operating Lab"
+
+Output:
+Faculty Name: Shalya Saxena
+Subject: Operating Lab
+
+-- Traffic light
+ Input:
+#!/bin/bash
+echo "Enter light color (red / yellow / green):"
+read color
+
+case $color in
+  red)
+    echo "Stop"
+    ;;
+  yellow)
+    echo "Wait"
+    ;;
+  green)
+    echo "Go"
+    ;;
+  *)
+    echo "Invalid color"
+    ;;
+esac
+
+Ouput:
+$ vi traffic.sh
+$ chmod 754 traffic.sh
+$ ./traffic.sh
+Enter light color (red / yellow / green):
+red
+Stop
+
+S

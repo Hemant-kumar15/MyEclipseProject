@@ -1,0 +1,19 @@
+class Cart<T> {
+    ArrayList<T> items = new ArrayList<>();
+
+    void addItem(T i) { items.add(i); }
+    void display() { System.out.println(items); }
+}
+
+class Electronics {}
+class Clothing {}
+
+class Main {
+    public static void main(String[] args) {
+        Cart<Electronics> e = new Cart<>();
+        e.addItem(new Electronics());
+
+        Cart<Clothing> c = new Cart<>();
+        c.addItem(new Clothing());
+    }
+}
