@@ -1,0 +1,28 @@
+x
+public class Order {
+    int orderId;
+    String customerName;
+    double amount;
+
+    public Order(int orderId, String customerName, double amount) {
+        this.orderId = orderId;
+        this.customerName = customerName;
+        this.amount = amount;
+    }
+
+    @Override
+    public int hashCode() {
+        return orderId;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Order o = (Order) obj;
+        return this.orderId == o.orderId;
+    }
+
+    @Override
+    public String toString() {
+        return "[ID: " + orderId + ", Name: " + customerName + ", Amount: " + amount + "]";
+    }
+}
