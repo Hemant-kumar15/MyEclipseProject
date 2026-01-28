@@ -1,0 +1,29 @@
+interface Taxable{double tax();}
+
+abstract class Product{
+    int id;String name;double price;
+    Product(int i,String n,double p){id=i;name=n;price=p;}
+    abstract double discount();
+}
+
+class Electronics extends Product implements Taxable{
+    Electronics(int i,String n,double p){super(i,n,p);}
+    double discount(){return price*0.1;}
+    public double tax(){return price*0.18;}
+}
+
+class Clothing extends Product implements Taxable{
+    Clothing(int i,String n,double p){super(i,n,p);}
+    double discount(){return price*0.2;}
+    public double tax(){return price*0.05;}
+}
+
+public class Shop{
+    public static void main(String[]a){
+        Product[] items={new Electronics(1,"TV",50000),new Clothing(2,"Shirt",2000)};
+        for(Product p:items){
+            double finalPrice=p.price+((Taxable)p).tax()-p.discount();
+            System.out.println(p.name+" Final Price:"+finalPrice);
+        }
+    }
+}
